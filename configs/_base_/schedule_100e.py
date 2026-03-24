@@ -53,13 +53,3 @@ train_cfg = dict(
 )
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
-
-# ── Hooks ─────────────────────────────────────────────────────────────────────
-default_hooks = dict(
-    checkpoint=dict(
-        type='CheckpointHook',
-        interval=10,
-        max_keep_ckpts=3,
-        save_best='auto',   # saves best coco/bbox_mAP checkpoint
-    ),
-)

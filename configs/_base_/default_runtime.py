@@ -11,6 +11,12 @@ default_hooks = dict(
     checkpoint=dict(type='CheckpointHook', interval=10, max_keep_ckpts=3),
     sampler_seed=dict(type='DistSamplerSeedHook'),
     visualization=dict(type='mmdet.DetVisualizationHook'),
+    checkpoint=dict(
+        type='CheckpointHook',
+        interval=10,
+        max_keep_ckpts=3,
+        save_best='auto',   # saves best coco/bbox_mAP checkpoint
+    ),
 )
 
 env_cfg = dict(
