@@ -44,23 +44,9 @@ Input (1024 × 1024)
 
 ```bash
 
-conda create -n mmyolo python=3.10 -y
+conda create -n mmyolo python=3.8 pytorch==1.10.1 torchvision==0.11.2 cudatoolkit=11.3 -c pytorch -y
 
-conda activate mmyolo06
-```
-
-
-### Step 1 — PyTorch
-
-```bash
-# CUDA 11.8
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
-
-# CUDA 12.1
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-
-# CPU only
-pip install torch torchvision
+conda activate mmyolo
 ```
 
 ### Step 2 — mmcv  (must use `mim`, not `pip install mmcv` directly)
