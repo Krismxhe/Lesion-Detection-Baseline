@@ -10,14 +10,19 @@ parsed. This is required so that:
 Always import det_baseline before calling Runner.from_cfg(cfg).
 """
 
-import mmdet
-import mmpretrain
-import mmyolo
+from mmdet.utils import register_all_modules as register_mmdet_modules
+from mmpretrain.utils import register_all_modules as register_mmpretrain_modules
+from mmyolo.utils import register_all_modules as register_mmyolo_modules
 
 # Registration order matters: mmdet first (mmyolo depends on it),
 # then mmpretrain, finally mmyolo which sets the default scope so
 # that type='YOLODetector' / 'CSPNeXtPAFPN' / 'RTMDetSepBNHead'
 # resolve correctly when building models from config.
-mmdet.register_all_modules(init_default_scope=False)
-mmpretrain.register_all_modules(init_default_scope=False)
-mmyolo.register_all_modules(init_default_scope=True)
+# mmdet first
+register_mmdet_modules(init_default_scope=False)
+
+# then mmpretrain
+register_mmpretrain_modules(init_default_scope=False)
+
+# finally mmyolo, and let it own the default scope
+register_mmyolo_modules(init_default_scope=True)
