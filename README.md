@@ -40,6 +40,16 @@ Input (1024 × 1024)
 
 ## 0. Installation
 
+### Step 1 - Create new conda environments
+
+```bash
+
+conda create -n mmyolo python=3.10 -y
+
+conda activate mmyolo06
+```
+
+
 ### Step 1 — PyTorch
 
 ```bash
@@ -56,15 +66,15 @@ pip install torch torchvision
 ### Step 2 — mmcv  (must use `mim`, not `pip install mmcv` directly)
 
 ```bash
-pip install openmim
-mim install "mmcv>=2.1.0"
+pip install -U openmim
+mim install "mmcv>=2.0.0rc4,<2.1.0"
 ```
 
 ### Step 3 — OpenMMLab stack + other dependencies
 
 ```bash
 mim install "mmengine>=0.10.0"
-mim install "mmdet>=3.3.0"
+mim install "mmdet>=3.0.0,<4.0.0"
 mim install "mmyolo>=0.6.0"
 mim install "mmpretrain>=1.2.0"
 
