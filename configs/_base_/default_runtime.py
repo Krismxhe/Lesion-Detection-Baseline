@@ -8,15 +8,9 @@ default_hooks = dict(
     timer=dict(type='IterTimerHook'),
     logger=dict(type='LoggerHook', interval=20),
     param_scheduler=dict(type='ParamSchedulerHook'),
-    checkpoint=dict(type='CheckpointHook', interval=10, max_keep_ckpts=3),
+    checkpoint=dict(type='CheckpointHook', interval=10, max_keep_ckpts=3,save_best='auto'),
     sampler_seed=dict(type='DistSamplerSeedHook'),
     visualization=dict(type='mmdet.DetVisualizationHook'),
-    checkpoint=dict(
-        type='CheckpointHook',
-        interval=10,
-        max_keep_ckpts=3,
-        save_best='auto',   # saves best coco/bbox_mAP checkpoint
-    ),
 )
 
 env_cfg = dict(
