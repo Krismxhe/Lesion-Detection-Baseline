@@ -1,0 +1,32 @@
+# ================================================================
+# det-baseline: RTMDet + Multi-Backbone Detection Framework
+# Install order matters: torch first, then mmcv, then mm-packages
+# ================================================================
+
+# --- PyTorch (install manually matching your CUDA version) ---
+# CPU:   pip install torch torchvision
+# CUDA:  pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+torch>=2.0.0
+torchvision>=0.15.0
+
+# --- OpenMMLab core stack ---
+mmengine>=0.10.0
+# mmcv must be installed via mim or matching wheel, see README for instructions
+# mmcv>=2.1.0
+mmdet>=3.3.0
+mmyolo>=0.6.0
+mmpretrain>=1.2.0
+
+# --- timm (EfficientNet backbone) ---
+timm>=0.9.0
+
+# --- Dataset / annotation utils ---
+pycocotools>=2.0.7
+opencv-python>=4.8.0
+Pillow>=10.0.0
+pyyaml>=6.0
+
+# --- General utilities ---
+numpy>=1.24.0
+matplotlib>=3.7.0
+tqdm>=4.65.0

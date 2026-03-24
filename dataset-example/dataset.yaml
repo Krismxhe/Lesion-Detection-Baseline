@@ -1,0 +1,6 @@
+path: /data/mengxian_data/dr-chengdu/dr-multitask/dataset
+train: images/train
+val: images/val
+test: images/test
+img_nc: 5
+names: [cotton_wool_spots, epiretinal_membranes, hard_exudates, hemorrhages_or_microaneurysms, intraretinal_microvascular_anomalies, neovascularization(nv), venous_beading, vitreous_or_preretinal_hemorrhage]
